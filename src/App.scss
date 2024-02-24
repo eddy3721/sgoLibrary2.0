@@ -1,0 +1,260 @@
+$color-1: #333333;
+$color-2: #303c50;
+$color-2-light: #4c5e7e;
+$color-3: #6F4F91;
+$color-4: #f78dc5;
+$color-4-light: #c18ee6;
+$color-5: #C0C0C0;
+$color-6: #0000002f;
+$color-7: #ffffff33;
+$color-8: #37445c;
+$color-9: #4FD1C5;
+$color-10:#B794F4;
+$color-11:#f6878b;
+$color-12:#e2c897;
+$color-13:#7bd5a6;
+$color-14: #389e0d;
+$color-15: #6d9573;
+$color-16: #83aabc;
+$color-17: #7f6235;
+$color-18: #c973ff;
+$color-19: #aebaf8;
+$color-20:#eae5c9;
+$color-21:#6cc6cb;
+$color-22:#ccfbff;
+$color-23:#ef96c5;
+$color-24:#E38F43;
+$color-25:#7ff5db;
+$color-26:#273c49;
+body {
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient($color-1, $color-2);
+    color: $color-5;
+    height: 100%;
+    background-attachment: fixed;
+}
+
+body,
+#root {
+    height: 100%;
+}
+
+.menu-flex {
+    margin-top: 30vh;
+    flex-wrap: wrap;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.menu-btn {
+    flex-basis: calc(33% - 10px);
+    min-width: 400px;
+    height: 20vh;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center !important;
+    position: relative;
+    overflow: hidden;
+    svg {
+        font-size: 40px;
+        margin-right: 10px;
+    }
+    &:before {
+        content: "";
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transform: scale(1.05);
+        transition: none;
+        opacity: 0.3;
+    }
+    &:hover::before {
+        transform: scale(1.15);
+        transition: 2s ease 0s;
+    }
+    &:hover {
+        box-shadow: 0px 0px 80px -50px $color-25;
+        transition: 1s ease 0s;
+    }
+}
+
+.menu-btn-monsters {
+    &:hover::before {
+        background-image: url('./images/monster.jpg');
+    }
+}
+
+.menu-btn-items {
+    &:hover::before {
+        background-image: url('./images/items.png');
+    }
+}
+
+.menu-btn-skills {
+    &:hover::before {
+        background-image: url('./images/skills.webp');
+    }
+}
+
+.ant-table-row {
+    cursor: pointer;
+    transition: 0.25s ease 0s;
+    &:hover {
+        background-color: $color-26;
+    }
+}
+
+.ant-table-row-expand-icon {
+    &:hover {
+        color: $color-25 !important;
+    }
+}
+
+.myCard {
+    margin-top: 20px;
+    margin-left: 15%;
+    margin-right: 15%;
+    overflow-x: auto;
+}
+
+.ant-table {
+    overflow-x: auto;
+    min-width: 350px;
+}
+
+.ant-table-expanded-row {
+    .ant-table-cell {
+        padding: 8px !important;
+    }
+}
+
+.ant-typography {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.title {
+    color: $color-21 !important;
+}
+
+.badge-btn {
+    min-height: 43px;
+    min-width: 150px;
+    padding-left: 30px;
+    padding-right: 30px;
+    width: auto;
+    height: auto;
+}
+
+.ant-ribbon {
+    pointer-events: none;
+}
+
+.ant-ribbon-text {
+    color: $color-1 !important;
+    font-weight: 700;
+}
+
+.ant-divider {
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.home-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 50px !important;
+    height: 50px !important;
+    font-size: 25px;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.filter {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 50px;
+    width: 80%;
+    background-color: $color-2;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.7);
+    .ant-card-body {
+        padding: 12px;
+    }
+    div {
+        min-width: 200px;
+    }
+}
+
+.report-text {
+    flex-wrap: nowrap;
+}
+
+.report-level-1 {
+    color: $color-9;
+}
+
+.report-level-2 {
+    color: $color-10;
+    font-weight: bolder;
+}
+
+.report-level-3 {
+    color: $color-11;
+    font-weight: bolder;
+}
+
+.report-level-4 {
+    color: $color-12;
+    font-weight: bolder;
+}
+
+.report-number {
+    text-align: right;
+    width: 48px;
+    color: #7586a3;
+}
+
+.ant-btn-primary {
+    color: #1f483f;
+    font-weight: 700;
+    &:hover {
+        color: #1f483f !important;
+    }
+}
+
+.footer {
+    padding-bottom: 150px;
+}
+
+@media screen and (max-width: 1280px) {
+    .menu-flex {
+        margin-top: 20vh;
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .menu-flex {
+        margin-top: 10vh;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .myCard {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+}
