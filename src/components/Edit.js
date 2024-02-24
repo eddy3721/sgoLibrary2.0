@@ -215,6 +215,10 @@ function MonsterEdit(props) {
         setLoading(false);
     };
 
+
+    const filterOption = (input, option) =>
+        (option?.label ?? '').toLowerCase().includes(input.toLowerCase());
+
     /*useEffect(() => {
         console.log(formData);
     }, [formData]);*/
@@ -234,6 +238,7 @@ function MonsterEdit(props) {
                     placeholder="請選擇掉落物"
                     maxTagTextLength={12}
                     onChange={handleDropChange}
+                    filterOption={filterOption}
                     options={
                         Data.items.map((item) => ({ label: item.name, value: item.id }))
                     }
