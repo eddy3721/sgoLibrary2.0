@@ -234,7 +234,7 @@ function App() {
         colorPrimary: '#7ff5db',
         colorBgContainer: '#0000002f',
         colorBorderSecondary: '#ffffff33',
-        fontSize: 16
+        fontSize: 14
       },
       components: {
         Select: {
