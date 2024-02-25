@@ -46,6 +46,7 @@ export default function Skills(props) {
         <>
             <Card className='myCard'>
                 <Table
+                    size="small"
                     columns={columns}
                     expandable={{
                         expandedRowRender: (record) => (

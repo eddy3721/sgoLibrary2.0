@@ -11,15 +11,6 @@ export default function Monsters(props) {
     const { Data, api, monsterNotification, itemNotification } = props;
     const columns = [
         {
-            title: '',
-            dataIndex: 'avatar',
-            key: 'avatar',
-            width: 10,
-            render: (text, record) => (
-                <Avatar shape="square" size={64} src={<img src={`/images/monsters/${record.name}.webp`} alt='unKnown' />} />
-            )
-        },
-        {
             title: '名稱',
             dataIndex: 'name',
             key: 'name',
@@ -52,21 +43,25 @@ export default function Monsters(props) {
         <>
             <Card className='myCard'>
                 <Table
+                    size="small"
                     columns={columns}
                     expandable={{
                         expandedRowRender: (record) => (
-                            <Flex vertical style={{ marginLeft: '55px', marginRight: '55px', marginBottom: '8px' }}>
-                                <Title level={5} className='title'>掉落</Title>
-                                <Flex gap='large' wrap='wrap'>
-                                    {
-                                        record.drops.map((item, index) => (
-                                            <Badge.Ribbon text={<TbMoneybag />} key={index}>
-                                                <Button onClick={() => itemNotification(item.id)} type="dashed" className='badge-btn'>
-                                                    {`${item.name}`}
-                                                </Button>
-                                            </Badge.Ribbon>
-                                        ))
-                                    }
+                            <Flex>
+                                <Avatar shape="square" size={128} src={<img src={`/images/monsters/${record.name}.webp`} alt='unKnown' />} />
+                                <Flex vertical style={{ marginLeft: '55px', marginRight: '55px', marginBottom: '8px' }}>
+                                    <Title level={5} className='title'>掉落</Title>
+                                    <Flex gap='large' wrap='wrap'>
+                                        {
+                                            record.drops.map((item, index) => (
+                                                <Badge.Ribbon text={<TbMoneybag />} key={index}>
+                                                    <Button onClick={() => itemNotification(item.id)} type="dashed" className='badge-btn'>
+                                                        {`${item.name}`}
+                                                    </Button>
+                                                </Badge.Ribbon>
+                                            ))
+                                        }
+                                    </Flex>
                                 </Flex>
                             </Flex>
                         )
