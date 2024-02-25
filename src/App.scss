@@ -239,6 +239,10 @@ body,
     padding-bottom: 150px;
 }
 
+.avatar {
+    min-width: 128px;
+}
+
 @media screen and (max-width: 1280px) {
     .menu-flex {
         margin-top: 20vh;

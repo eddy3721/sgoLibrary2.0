@@ -48,7 +48,7 @@ export default function Monsters(props) {
                     expandable={{
                         expandedRowRender: (record) => (
                             <Flex>
-                                <Avatar shape="square" size={128} src={<img src={`/images/monsters/${record.name}.webp`} alt='unKnown' />} />
+                                <Avatar className='avatar' shape="square" size={128} src={<img src={`/images/monsters/${record.name}.webp`} alt='unKnown' />} />
                                 <Flex vertical style={{ marginLeft: '55px', marginRight: '55px', marginBottom: '8px' }}>
                                     <Title level={5} className='title'>掉落</Title>
                                     <Flex gap='large' wrap='wrap'>
